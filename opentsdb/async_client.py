@@ -12,6 +12,7 @@ from opentsdb_pandas.response import OpenTSDBResponse
 
 from pprint import pprint
 
+
 class AsyncClient(BaseClient):
 
     def __callback(self, respData, respObj, dfd):
@@ -30,5 +31,3 @@ class AsyncClient(BaseClient):
         c.addResponseErrback(self.__errback, dfd)
         c.addResponseCallback(self.__callback, dfd)
         return dfd
-
-
